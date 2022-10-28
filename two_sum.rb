@@ -18,4 +18,15 @@ def sorting_search(arr, target) #O(n*log(n))
     return false
 end
 
-p sorting_search(arr1, 13)
+def hash_two_sum(arr,target) #O(n)
+    h = Hash.new(0)
+    arr.each do |ele|
+        h[ele] = target-ele
+    end
+    h.each_pair do |k,v|
+       return true if arr.include?(v) && (k != v)
+    end
+    return false
+end
+
+p hash_two_sum(arr1, 14)
