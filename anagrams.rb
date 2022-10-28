@@ -15,4 +15,24 @@ def second_anagram?(str1, str2) #O(n^2)
     str2_arr.empty?
 end
 
-p second_anagram?('tree', 'reet')
+
+def third_anagram?(str1,str2) #O(n*log n)
+    return str1.chars.sort == str2.chars.sort
+end
+
+def fourth_anagram?(str1,str2) #O(n)
+    h1 = Hash.new(0)
+    h2 = Hash.new(0)
+
+    str1.each_char do |char|
+        h1[char] += 1
+    end
+
+    str2.each_char do |char|
+        h2[char] += 1
+    end
+
+    return h1 == h2
+end
+
+p  fourth_anagram?('treee', 'reet')
